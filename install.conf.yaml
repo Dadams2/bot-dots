@@ -46,9 +46,33 @@
         create: true
         relink: false
         force: false
-    ~/.tmux:
-      path: tmux
-      create: true
+    ~/.tmux.conf:
+        path: tmux/tmux.conf
+        create: false
+    ~/.config/btop:
+        path: btop
+        create: true
+    ~/.config/alacritty:
+        path: alacritty
+        create: true
+    ~/.config/cava:
+        path: cava
+        create: true
+    ~/.config/paru:
+        path: paru
+        create: true
+    ~/.config/polybar:
+        path: polybar
+        create: true
+    ~/.config/rofi:
+        path: rofi
+        create: true
+    ~/.config/kitty:
+        path: kitty
+        create: true
+    ~/.config/bottom:
+        path: bottom
+        create: true
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
