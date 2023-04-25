@@ -1,0 +1,50 @@
+- clean: ['~']
+
+- link:
+    ~/.bash_profile:
+        path: bash_profile
+        create: false
+        relink: false
+        force: false
+    ~/.bashrc:
+        path: bashrc
+        create: false
+        relink: false
+        force: false
+    ~/.gitconfig:
+        path: gitconfig
+        create: false
+        relink: false
+        force: false
+    ~/.ssh/config:
+        path: ssh/config
+        create: true
+        relink: false
+        force: false
+    ~/.vimrc:
+        path: vimrc
+        create: false
+        relink: false
+        force: false
+    ~/.zshenv:
+        path: zshenv
+        create: false
+        relink: false
+        force: false
+    ~/.zshrc:
+        path: zshrc
+        create: false
+        relink: false
+        force: false
+    ~/.config/i3:
+        path: config/i3/
+        create: true
+        relink: false
+        force: false
+    ~/.config/redshift:
+        path: config/redshift/
+        create: true
+        relink: false
+        force: false
+
+

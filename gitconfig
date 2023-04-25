@@ -1,0 +1,13 @@
+[user]
+	email = dbadams@iinet.net.au
+	name = David Adams
+[pull]
+	rebase = true
+[credential]
+	helper = manager-core
+	helper = /usr/bin/git-credential-manager-core
+	credentialStore = gpg
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+[github]
+	user = dadams2
