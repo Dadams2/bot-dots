@@ -1,0 +1,51 @@
+Host *
+    #    User dadams
+    Compression yes
+    LogLevel INFO
+    #IdentityFile ~/.ssh/id_ed25519
+    ControlMaster auto
+    ControlPath ~/.ssh/sessions/-%r@%h:%p
+    ControlPersist 900
+
+ServerAliveInterval 120
+AddKeysToAgent yes
+
+Host ucc
+    HostName motsugo-out.ucc.asn.au
+    User dadams
+    ForwardX11 yes
+    ForwardX11Trusted yes
+    IdentityFile ~/.ssh/id_rsa
+
+Host topaz
+    HostName topaz.pawsey.org.au
+    User dadams2
+    Port 22
+    IdentityFile ~/.ssh/pawsey_rsa
+
+Host setonix
+    HostName setonix.pawsey.org.au
+    User dadams2
+    Port 22
+    IdentityFile ~/.ssh/pawsey_rsa
+
+Host *.ucc
+     HostName %h.asn.au
+     ProxyJump ucc
+     User root
+     IdentityFile ~/.ssh/ucc_wheel_key
+
+Host polymerization
+    User dadams
+    ForwardAgent yes
+    ProxyCommand ssh -W %h:%p ucc
+
+Host work
+    Hostname bud208
+    User davida
+    IdentityFile ~/.ssh/id_ed25519
+
+Host support-houston
+    Hostname support-houston
+    User davida
+    IdentityFile ~/.ssh/id_rsa
