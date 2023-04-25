@@ -74,5 +74,27 @@
         path: bottom
         create: true
 
+- cargo:
+    - git-delta
+    - ripgrep
+    - fd-find
+
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
+
+- shell:
+    command: |
+      if command -v curl >/dev/null 2>&1; then
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/romkatv/zsh4humans/v5/install)"
+      else
+        sh -c "$(wget -O- https://raw.githubusercontent.com/romkatv/zsh4humans/v5/install)"
+      fi
+
+# - shell:
+#     description: install btop
+#     command: |
+#       wget -q https://github.com/aristocratos/btop/releases/latest/download/btop-x86_64-linux-musl.tbz -O btop.tbz
+#       tar -xjvf btop.tbz &>/dev/null
+#       make -s install &>/dev/null
+#       popd  &> /dev/null
+#       rm -rf ./btopinst
