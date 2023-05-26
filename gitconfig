@@ -4,8 +4,7 @@
 [pull]
 	rebase = true
 [credential]
-	helper = manager-core
-	helper = /usr/bin/git-credential-manager-core
+	helper = cache
 	credentialStore = gpg
 [credential "https://dev.azure.com"]
 	useHttpPath = true
