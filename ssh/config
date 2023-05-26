@@ -1,3 +1,6 @@
+Host lab0
+    HostName lab0
+
 Host *
     #    User dadams
     Compression yes
@@ -41,11 +44,11 @@ Host polymerization
     ProxyCommand ssh -W %h:%p ucc
 
 Host work
-    Hostname bud208
+    HostName bud208
     User davida
     IdentityFile ~/.ssh/id_ed25519
 
 Host support-houston
-    Hostname support-houston
+    HostName support-houston
     User davida
     IdentityFile ~/.ssh/id_rsa
