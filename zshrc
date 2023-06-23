@@ -33,7 +33,7 @@ zstyle ':z4h:direnv:success' notify 'yes'
 
 # Enable ('yes') or disable ('no') automatic teleportation of z4h over
 # SSH when connecting to these hosts.
-zstyle ':z4h:ssh:example-hostname1'   enable 'yes'
+zstyle ':z4h:ssh:thepi'   enable 'yes'
 zstyle ':z4h:ssh:*.example-hostname2' enable 'no'
 # The default value if none of the overrides above match the hostname.
 zstyle ':z4h:ssh:*'                   enable 'no'
@@ -103,27 +103,14 @@ setopt glob_dots     # no special treatment for file names with a leading dot
 setopt no_auto_menu  # require an extra TAB press to open the completion menu
 
 ### my customisations
-# >>> mamba initialize >>>
-# !! Contents within this block are managed by 'mamba init' !!
-export MAMBA_EXE="/home/dadams/.local/bin/micromamba";
-export MAMBA_ROOT_PREFIX="/home/dadams/micromamba";
-__mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__mamba_setup"
-else
-    if [ -f "/home/dadams/micromamba/etc/profile.d/micromamba.sh" ]; then
-        . "/home/dadams/micromamba/etc/profile.d/micromamba.sh"
-    else
-        export  PATH="/home/dadams/micromamba/bin:$PATH"  # extra space after export prevents interference from conda init
-    fi
-fi
-unset __mamba_setup
-# <<< mamba initialize <<<
 alias conda=micromamba
 alias mb=micromamba
 
-# Init things that need to happen
-[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
+if command -v zoxide &> /dev/null
+    then
+        eval "$(zoxide init zsh --cmd j)"
+fi
+
 
 # Define aliases.
 alias tree='tree -a -I .git'
@@ -134,7 +121,10 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 #alias la='colorls -a'
 #alias lsg='colorls --gs -l'
 #alias ls='colorls'
-alias ls='exa'
+if command -v exa &> /dev/null
+    then
+        alias ls='exa'
+fi
 alias lst='ls --tree'
 alias l='ls -l'
 alias la='ls -a'
@@ -222,4 +212,20 @@ function save_workspace {
 sed -i 's|^\(\s*\)// "|\1"|g; /^\s*\/\//d' ~/.config/i3/workspace_$1.json
    echo "Make sure to manually edit ~/.config/i3/workspace-$1.json"
 }
-eval "$(zoxide init zsh --cmd j)"
+
+# >>> mamba initialize >>>
+# !! Contents within this block are managed by 'mamba init' !!
+export MAMBA_EXE="/home/dadams/.local/bin/micromamba";
+export MAMBA_ROOT_PREFIX="/home/dadams/micromamba";
+__mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__mamba_setup"
+else
+    if [ -f "/home/dadams/micromamba/etc/profile.d/micromamba.sh" ]; then
+        . "/home/dadams/micromamba/etc/profile.d/micromamba.sh"
+    else
+        export  PATH="/home/dadams/micromamba/bin:$PATH"  # extra space after export prevents interference from conda init
+    fi
+fi
+unset __mamba_setup
+# <<< mamba initialize <<<
