@@ -1,5 +1,12 @@
+Host ecu-lab0
+    HostName lab0.ads.ecu.edu.au
+    User dadams
+
 Host lab0
     HostName lab0
+
+Host oxidation
+    HostName oxidation
 
 Host *
     #    User dadams
