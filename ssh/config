@@ -1,3 +1,7 @@
+Host blending.ads.ecu.edu.au
+    HostName blending.ads.ecu.edu.au
+    User dadams
+
 Host ecu-lab0
     HostName lab0.ads.ecu.edu.au
     User dadams
