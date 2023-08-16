@@ -229,3 +229,7 @@ else
 fi
 unset __mamba_setup
 # <<< mamba initialize <<<
+#
+if [ -d "/opt/asdf-vm" ]; then
+    . /opt/asdf-vm/asdf.sh
+fi
