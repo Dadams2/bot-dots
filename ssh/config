@@ -17,11 +17,11 @@ Host *
     Compression yes
     LogLevel INFO
     #IdentityFile ~/.ssh/id_ed25519
-    ControlMaster auto
-    ControlPath ~/.ssh/sessions/-%r@%h:%p
-    ControlPersist 900
+#    ControlMaster auto
+#    ControlPath ~/.ssh/sessions/-%r@%h:%p
+#    ControlPersist 900
 
-ServerAliveInterval 120
+#ServerAliveInterval 120
 AddKeysToAgent yes
 
 Host ucc
