@@ -78,6 +78,8 @@ bindsym $mod+x exec --no-startup-id ~/.config/rofi/bin/menu_mpd
 bindsym $mod+d exec --no-startup-id ~/.config/rofi/bin/launcher_text run
 bindsym $modShift+v exec --no-startup-id ~/.config/rofi/vpn.sh
 bindsym $mod+Shift+d exec --no-startup-id ~/.config/rofi/bin/launcher_text window
+bindsym $mod+Shift+p exec --no-startup-id rofi-rbw
+
 # bindsym $mod+d exec --no-startup-id rofi -show combi
 # bindsym $mod+d exec "rofi -combi-modi run,window,drun -show combi -modi combi -dpi 1"
 #
