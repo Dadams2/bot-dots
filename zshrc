@@ -121,9 +121,9 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 #alias la='colorls -a'
 #alias lsg='colorls --gs -l'
 #alias ls='colorls'
-if command -v exa &> /dev/null
+if command -v eza &> /dev/null
     then
-        alias ls='exa'
+        alias ls='eza'
 fi
 alias lst='ls --tree'
 alias l='ls -l'
