@@ -2,15 +2,17 @@ Host blending.ads.ecu.edu.au
     HostName blending.ads.ecu.edu.au
     User dadams
 
-Host ecu-lab0
-    HostName lab0.ads.ecu.edu.au
+Host thebeast.ads.ecu.edu.au
+    HostName thebeast.ads.ecu.edu.au
     User dadams
-
-Host lab0
-    HostName lab0
 
 Host oxidation
     HostName oxidation
+
+Host medico
+     HostName motsugo.ucc.asn.au
+     LocalForward 8006 medico:8006
+     IdentityFile ~/.ssh/ucc_wheel_key
 
 Host *
     #    User dadams
