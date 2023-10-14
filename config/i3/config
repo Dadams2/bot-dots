@@ -84,14 +84,15 @@ bindsym $mod+Shift+q kill
 #bindsym $mod+d exec --no-startup-id dmenu_run
 # bindsym $mod+d exec --no-startup-id rofi -show combi -run-shell-command '{terminal} -e zsh -ic "{cmd} && read"'
 bindsym $mod+p exec --no-startup-id ~/.config/rofi/bin/menu_powermenu
-bindsym $mod+c exec --no-startup-id ~/.config/rofi/bin/menu_network
-bindsym $mod+x exec --no-startup-id ~/.config/rofi/bin/menu_mpd
+bindsym $mod+Shift+n exec --no-startup-id ~/.config/rofi/bin/menu_network
+bindsym $mod+Shift+m exec --no-startup-id ~/.config/rofi/bin/menu_mpd
 bindsym $mod+d exec --no-startup-id ~/.config/rofi/bin/launcher_text run
 bindsym $modShift+v exec --no-startup-id ~/.config/rofi/vpn.sh
 bindsym $mod+Shift+d exec --no-startup-id ~/.config/rofi/bin/launcher_text window
 bindsym $mod+Shift+p exec --no-startup-id rofi-rbw
+bindsym $mod+Shift+w exec --no-startup-id ~/.config/i3/mapwacom.sh --device-regex="Wacom.*" --screen="USB-C-0"
 
-# bindsym $mod+d exec --no-startup-id rofi -show combi
+# bindsym $mod+d exec --no-startup-id rofi -show comb
 # bindsym $mod+d exec "rofi -combi-modi run,window,drun -show combi -modi combi -dpi 1"
 #
 # A more modern dmenu replacement is rofi:
