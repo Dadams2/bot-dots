@@ -58,6 +58,9 @@
     ~/.tmux.conf:
         path: tmux/tmux.conf
         create: false
+    ~/.tmux:
+        path: tmux
+        create: true
     ~/.config/btop:
         path: btop
         create: true
@@ -95,6 +98,7 @@
     - fd-find
     - zoxide
     - bottom
+    - eza
 
 - shell:
     - description: Install btop
