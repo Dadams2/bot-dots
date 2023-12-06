@@ -225,16 +225,16 @@ sed -i 's|^\(\s*\)// "|\1"|g; /^\s*\/\//d' ~/.config/i3/workspace_$1.json
 
 # >>> mamba initialize >>>
 # !! Contents within this block are managed by 'mamba init' !!
-export MAMBA_EXE="/home/dadams/.local/bin/micromamba";
-export MAMBA_ROOT_PREFIX="/home/dadams/micromamba";
-__mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+export MAMBA_EXE="/d/sw/micromamba/0.26.0/micromamba";
+export MAMBA_ROOT_PREFIX="/localData/shared/davida";
+__mamba_setup="$('/d/sw/micromamba/0.26.0/micromamba' shell hook --shell zsh --prefix '/localData/shared/davida/envs' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__mamba_setup"
 else
-    if [ -f "/home/dadams/micromamba/etc/profile.d/micromamba.sh" ]; then
-        . "/home/dadams/micromamba/etc/profile.d/micromamba.sh"
+    if [ -f "/localData/shared/davida/envs/etc/profile.d/micromamba.sh" ]; then
+        . "/localData/shared/davida/envs/etc/profile.d/micromamba.sh"
     else
-        export  PATH="/home/dadams/micromamba/bin:$PATH"  # extra space after export prevents interference from conda init
+        export  PATH="/localData/shared/davida/envs/bin:$PATH"  # extra space after export prevents interference from conda init
     fi
 fi
 unset __mamba_setup
@@ -243,3 +243,20 @@ unset __mamba_setup
 if [ -d "/opt/asdf-vm" ]; then
     . /opt/asdf-vm/asdf.sh
 fi
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/d/sw/miniconda3/4.8.3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/d/sw/miniconda3/4.8.3/etc/profile.d/conda.sh" ]; then
+        . "/d/sw/miniconda3/4.8.3/etc/profile.d/conda.sh"
+    else
+        export PATH="/d/sw/miniconda3/4.8.3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
