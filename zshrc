@@ -103,8 +103,18 @@ setopt glob_dots     # no special treatment for file names with a leading dot
 setopt no_auto_menu  # require an extra TAB press to open the completion menu
 
 ### my customisations
-alias conda=micromamba
 alias mb=micromamba
+
+# User specific aliases and functions
+if [ "$BASH_ENV" != "$HOME/.bashenv" ] && [ -r "$HOME/.bashenv" ]; then
+  export BASH_ENV="$HOME/.bashenv"
+fi
+
+type module >/dev/null 2>&1 || . $BASH_ENV
+
+if [[ -f ~/.bash_aliases ]]; then
+    . ~/.bash_aliases
+fi
 
 if command -v zoxide &> /dev/null
     then
