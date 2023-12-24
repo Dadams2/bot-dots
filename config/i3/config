@@ -239,7 +239,7 @@ bindsym $mod+Shift+a exec --no-startup-id "~/Scripts/swap-outputs.sh"
 bindsym $mod+Shift+f exec flameshot gui
 
 
-bindsym $mod+i exec --no-startup-id  "~/.emacs.d/bin/doom everywhere"
+bindsym $mod+i exec --no-startup-id  "~/.emacs.d/bin/doom +everywhere"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
