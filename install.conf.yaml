@@ -99,6 +99,7 @@
     - zoxide
     - bottom
     - eza
+    - hyperfine
 
 - shell:
     - description: Install btop
