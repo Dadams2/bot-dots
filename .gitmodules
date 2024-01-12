@@ -8,3 +8,6 @@
 [submodule "dotbot-ifplatform"]
 	path = dotbot-ifplatform
 	url = https://github.com/ssbanerje/dotbot-ifplatform.git
+[submodule "ssh"]
+	path = ssh
+	url = git@github.com:Dadams2/sshconfig.git
