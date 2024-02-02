@@ -42,3 +42,4 @@ if [[ -n "$TMUX" ]]; then
     exec /bin/zsh
   fi
 fi
+
