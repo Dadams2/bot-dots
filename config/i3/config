@@ -23,7 +23,7 @@ font Fira Code Nerd Font
 
 gaps inner 6
 gaps outer 0
-gaps top 20
+gaps top 35
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
 default_border pixel 0
