@@ -223,17 +223,13 @@ sed -i 's|^\(\s*\)// "|\1"|g; /^\s*\/\//d' ~/.config/i3/workspace_$1.json
 
 # >>> mamba initialize >>>
 # !! Contents within this block are managed by 'mamba init' !!
-export MAMBA_EXE="/home/dadams/.local/bin/micromamba";
-export MAMBA_ROOT_PREFIX="/home/dadams/micromamba";
-__mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+export MAMBA_EXE='/opt/homebrew/bin/micromamba';
+export MAMBA_ROOT_PREFIX='/Users/DAADAMS/micromamba';
+__mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__mamba_setup"
 else
-    if [ -f "/home/dadams/micromamba/etc/profile.d/micromamba.sh" ]; then
-        . "/home/dadams/micromamba/etc/profile.d/micromamba.sh"
-    else
-        export  PATH="/home/dadams/micromamba/bin:$PATH"  # extra space after export prevents interference from conda init
-    fi
+    alias micromamba="$MAMBA_EXE"  # Fallback on help from mamba activate
 fi
 unset __mamba_setup
 # <<< mamba initialize <<<
@@ -241,3 +237,7 @@ unset __mamba_setup
 if [ -d "/opt/asdf-vm" ]; then
     . /opt/asdf-vm/asdf.sh
 fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
