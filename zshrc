@@ -110,8 +110,6 @@ if [ "$BASH_ENV" != "$HOME/.bashenv" ] && [ -r "$HOME/.bashenv" ]; then
   export BASH_ENV="$HOME/.bashenv"
 fi
 
-type module >/dev/null 2>&1 || . $BASH_ENV
-
 if [[ -f ~/.bash_aliases ]]; then
     . ~/.bash_aliases
 fi
