@@ -102,6 +102,9 @@ alias ls="${aliases[ls]:-ls} -A"
 setopt glob_dots     # no special treatment for file names with a leading dot
 setopt no_auto_menu  # require an extra TAB press to open the completion menu
 
+
+
+
 ### my customisations
 alias mb=micromamba
 
@@ -159,12 +162,30 @@ PATH="$PATH:$HOME/.emacs.d/bin"
 PATH="$PATH:$HOME/.cargo/bin"
 PATH="$PATH:$HOME/.local/bin"
 
+
+
 # Variables
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
     --color=fg:#e5e9f0,bg:#3b4252,hl:#81a1c1
     --color=fg+:#e5e9f0,bg+:#3b4252,hl+:#81a1c1
     --color=info:#eacb8a,prompt:#bf6069,pointer:#b48dac
     --color=marker:#a3be8b,spinner:#b48dac,header:#a3be8b'
+
+export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git "
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
+# export $FZF_CTRL_R_OPTS=""
+# Setup fzf previews
+export FZF_CTRL_T_OPTS="--preview 'bat --color=always -n --line-range :500 {}'"
+export FZF_ALT_C_OPTS="--preview 'eza --icons=always --tree --color=always {} | head -200'"
+
+
+# fzf preview for tmux
+export FZF_TMUX_OPTS=" -p90%,70% "
+
+# I like the fzf default keybindings and settings but I want to keep z4h history widget
+source <(fzf --zsh)
+z4h bindkey z4h-fzf-history Ctrl+R
 
 
 # Add flags to existing aliases.
