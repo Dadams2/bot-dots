@@ -1,5 +1,5 @@
 [user]
-	email = dbadams@iinet.net.au
+	email = david@dadams2.com
 	name = David Adams
 [pull]
 	rebase = true
@@ -30,3 +30,5 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[commit]
+	gpgsign = false

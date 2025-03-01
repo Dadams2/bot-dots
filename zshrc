@@ -56,7 +56,7 @@ z4h install ohmyzsh/ohmyzsh || return
 z4h init || return
 
 # Extend PATH.
-path=(~/bin $path)
+#path=(~/bin $path)
 
 # Export environment variables.
 export GPG_TTY=$TTY
@@ -152,6 +152,7 @@ alias vimc='vim ~/.config/nvim/init.vim'
 alias rr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash'
 alias lorem="curl https://gist.githubusercontent.com/eddie-atkinson/b502aae2dc358635faf67c51e95eab06/raw/f7b5c5be68a3daf9892167513840d435bef3e3bb/lorem.txt"
 alias c='clear'                             # c:            Clear terminal display
+alias v='fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim'
 
 # Set PATHS
 PATH="$PATH:$HOME/.emacs.d/bin"
@@ -241,3 +242,27 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+GPG_TTY=$(tty)
+export GPG_TTY
+
+
+ # Nix
+ if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+    . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+ fi
+ # End Nix
+
+# bun completions
+[ -s "/Users/DAADAMS/.bun/_bun" ] && source "/Users/DAADAMS/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
