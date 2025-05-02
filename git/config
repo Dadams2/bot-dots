@@ -10,19 +10,19 @@
 	useHttpPath = true
 [github]
 	user = dadams2
-# git delta configuration
 [core]
-    pager = delta
+    pager = delta # better git diff
+	preloadindex = true # load index into memory to improve perf
+	compression = 9 # trade some cpu for faster network and a little disk
+[init]
+	defaultBranch = main
 [interactive]
     diffFilter = delta --color-only
-
 [delta]
     navigate = true    # use n and N to move between diff sections
     light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
-
 [merge]
     conflictstyle = diff3
-
 [diff]
     colorMoved = default
 [filter "lfs"]
@@ -32,3 +32,7 @@
 	required = true
 [commit]
 	gpgsign = false
+[status]
+	branch = true
+	showStash = true
+	showUntrackedFiles = true

@@ -20,9 +20,9 @@
         create: false
         relink: false
         force: false
-    ~/.gitconfig:
-        path: gitconfig
-        create: false
+    ~/.config/git/config:
+        path: git/config
+        create: true
         relink: false
         force: false
     ~/.ssh/config:
