@@ -33,7 +33,7 @@ zstyle ':z4h:direnv:success' notify 'yes'
 
 # Enable ('yes') or disable ('no') automatic teleportation of z4h over
 # SSH when connecting to these hosts.
-zstyle ':z4h:ssh:thepi'   enable 'yes'
+#zstyle ':z4h:ssh:'   enable 'yes'
 zstyle ':z4h:ssh:*.example-hostname2' enable 'no'
 # The default value if none of the overrides above match the hostname.
 zstyle ':z4h:ssh:*'                   enable 'no'
@@ -162,7 +162,10 @@ PATH="$PATH:$HOME/.emacs.d/bin"
 PATH="$PATH:$HOME/.cargo/bin"
 PATH="$PATH:$HOME/.local/bin"
 
-
+# Check if Neovim is installed
+if command -v nvim >/dev/null 2>&1; then
+    alias vim='nvim'
+fi
 
 # Variables
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
