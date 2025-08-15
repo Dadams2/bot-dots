@@ -35,4 +35,5 @@
 [status]
 	branch = true
 	showStash = true
-	showUntrackedFiles = true
+[rerere]
+	enabled = true
